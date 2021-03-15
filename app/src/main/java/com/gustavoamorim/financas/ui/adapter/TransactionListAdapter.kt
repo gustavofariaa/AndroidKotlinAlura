@@ -47,8 +47,7 @@ class TransactionListAdapter(
     }
 
     private fun addDate(createdView: View, transaction: Transaction) {
-        createdView.transacao_data.text = transaction.date
-            .brazilianFormat()
+        createdView.transacao_data.text = transaction.date.brazilianFormat()
     }
 
     private fun addCategory(createdView: View, transaction: Transaction) {
@@ -61,26 +60,19 @@ class TransactionListAdapter(
         createdView.transacao_icone.setBackgroundResource(icon)
     }
 
-    private fun getIconByType(type: TransactionType): Int {
-        return when (type) {
-            TransactionType.INCOME -> R.drawable.icone_transacao_item_receita
-            TransactionType.EXPENSE -> R.drawable.icone_transacao_item_despesa
-        }
+    private fun getIconByType(type: TransactionType) = when (type) {
+        TransactionType.INCOME -> R.drawable.icone_transacao_item_receita
+        TransactionType.EXPENSE -> R.drawable.icone_transacao_item_despesa
     }
 
     private fun addValue(transaction: Transaction, createdView: View) {
         val color = getColorByType(transaction.type)
         createdView.transacao_valor.setTextColor(color)
-        createdView.transacao_valor.text = transaction.value
-            .brazilianFormat()
+        createdView.transacao_valor.text = transaction.value.brazilianFormat()
     }
 
-    private fun getColorByType(type: TransactionType): Int {
-        return when (type) {
-            TransactionType.INCOME -> ContextCompat
-                .getColor(context, R.color.receita)
-            TransactionType.EXPENSE -> ContextCompat
-                .getColor(context, R.color.despesa)
-        }
+    private fun getColorByType(type: TransactionType) = when (type) {
+        TransactionType.INCOME -> ContextCompat.getColor(context, R.color.receita)
+        TransactionType.EXPENSE -> ContextCompat.getColor(context, R.color.despesa)
     }
 }
