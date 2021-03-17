@@ -10,10 +10,7 @@ import com.gustavoamorim.financas.model.Transaction
 import kotlinx.android.synthetic.main.resumo_card.view.*
 import java.math.BigDecimal
 
-class SummaryView(
-    private val context: Context,
-    private val view: View, transactions: List<Transaction>
-) {
+class SummaryView(context: Context, private val view: View, transactions: List<Transaction>) {
     private val summary = Summary(transactions)
     private val incomeColor = ContextCompat.getColor(context, R.color.receita)
     private val expenseColor = ContextCompat.getColor(context, R.color.despesa)
@@ -48,4 +45,5 @@ class SummaryView(
             text = total.brazilianFormat()
         }
     }
+
 }

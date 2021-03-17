@@ -2,7 +2,7 @@ package com.gustavoamorim.financas.extension
 
 import java.math.BigDecimal
 import java.text.DecimalFormat
-import java.util.Locale
+import java.util.*
 
 fun BigDecimal.brazilianFormat(): String {
     val brazilianFormat = DecimalFormat

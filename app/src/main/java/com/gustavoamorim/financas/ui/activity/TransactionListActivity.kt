@@ -1,21 +1,28 @@
 package com.gustavoamorim.financas.ui.activity
 
 import android.os.Bundle
-import android.view.View
+import android.view.Menu
+import android.view.MenuItem
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
 import com.gustavoamorim.financas.R
-import com.gustavoamorim.financas.delegate.TransactionDelegate
+import com.gustavoamorim.financas.dao.TransactionDAO
 import com.gustavoamorim.financas.model.Transaction
 import com.gustavoamorim.financas.model.TransactionType
 import com.gustavoamorim.financas.ui.SummaryView
 import com.gustavoamorim.financas.ui.adapter.TransactionListAdapter
 import com.gustavoamorim.financas.ui.dialog.AddTransactionDialog
+import com.gustavoamorim.financas.ui.dialog.UpdateTransactionDialog
 import kotlinx.android.synthetic.main.activity_lista_transacoes.*
 
 class TransactionListActivity : AppCompatActivity() {
 
-    private val transactions: MutableList<Transaction> = mutableListOf()
+    private val dao = TransactionDAO()
+    private val transactions = dao.transactions
+
+    private val activityView by lazy { window.decorView }
+    private val activityViewGroup by lazy { activityView as ViewGroup }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,20 +33,44 @@ class TransactionListActivity : AppCompatActivity() {
         configFloatActionButton()
     }
 
-    private fun updateTransaction(transaction: Transaction) {
-        transactions.add(transaction)
-        configSummary()
-        configTransactions()
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        val menuId = item.itemId
+        if (menuId == 1) {
+            val adapterMenuInfo = item.menuInfo as AdapterView.AdapterContextMenuInfo
+            val position = adapterMenuInfo.position
+            remove(position)
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    private fun showAddTransactionDialog(type: TransactionType) {
+        lista_transacoes_adiciona_menu.close(true)
+        AddTransactionDialog(activityViewGroup, this)
+            .show(type) { createdTransaction -> add(createdTransaction) }
+    }
+
+    private fun showUpdateTransactionDialog(transaction: Transaction, position: Int) {
+        UpdateTransactionDialog(activityViewGroup, this)
+            .show(transaction) { updatedTransaction -> update(updatedTransaction, position) }
     }
 
     private fun configSummary() {
-        val view: View = window.decorView
-        val summaryView = SummaryView(this, view, transactions)
+        val summaryView = SummaryView(this, activityView, transactions)
         summaryView.update()
     }
 
     private fun configTransactions() {
-        lista_transacoes_listview.adapter = TransactionListAdapter(transactions, this)
+        val transactionListAdapter = TransactionListAdapter(transactions, this)
+        with(lista_transacoes_listview) {
+            adapter = transactionListAdapter
+            setOnItemClickListener { _, _, position, _ ->
+                val transaction = transactions[position]
+                showUpdateTransactionDialog(transaction, position)
+            }
+            setOnCreateContextMenuListener { menu, _, _ ->
+                menu.add(Menu.NONE, 1, Menu.NONE, "Remover")
+            }
+        }
     }
 
     private fun configFloatActionButton() {
@@ -49,14 +80,24 @@ class TransactionListActivity : AppCompatActivity() {
             .setOnClickListener { showAddTransactionDialog(TransactionType.EXPENSE) }
     }
 
-    private fun showAddTransactionDialog(type: TransactionType) {
-        AddTransactionDialog(window.decorView as ViewGroup, this)
-            .show(type, object : TransactionDelegate {
-                override fun delegate(transaction: Transaction) {
-                    updateTransaction(transaction)
-                    lista_transacoes_adiciona_menu.close(true)
-                }
-            })
+    private fun updateTransactions() {
+        configSummary()
+        configTransactions()
+    }
+
+    private fun add(transaction: Transaction) {
+        dao.add(transaction)
+        updateTransactions()
+    }
+
+    private fun update(transaction: Transaction, position: Int) {
+        dao.update(transaction, position)
+        updateTransactions()
+    }
+
+    private fun remove(position: Int) {
+        dao.remove(position)
+        updateTransactions()
     }
 }
 

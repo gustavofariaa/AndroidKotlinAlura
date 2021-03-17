@@ -1,7 +1,6 @@
 package com.gustavoamorim.financas.model
 
 import java.math.BigDecimal
-import java.util.Calendar
 
 class Summary(private val transactions: List<Transaction>) {
 
