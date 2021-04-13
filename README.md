@@ -12,22 +12,22 @@
 
 ## ✨ Projetos
  
-- [Finances](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/Finances)
+- [Finances](https://github.com/gustavofariaa/AndroidKotlinAlura/tree/main/Finances)
   <p align="left">
     <img src=".github/Finances.gif" alt="layout" width="180px">
   </p>
-- [TechNews](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/TechNews)
+- [TechNews](https://github.com/gustavofariaa/AndroidKotlinAlura/tree/main/TechNews)
   <p align="left">
     <img src=".github/TechNews.gif" alt="layout" width="180px">
   </p>
     <p align="left">
     <img src=".github/TechNews2.gif" alt="layout" width="360px">
   </p>
-- [AluraEsporte](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/AluraEsporte)
+- [AluraEsporte](https://github.com/gustavofariaa/AndroidKotlinAlura/tree/main/AluraEsporte)
   <p align="left">
     <img src=".github/AluraEsporte.gif" alt="layout" width="180px">
   </p>
-- [DataBinding](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/DataBinding)
+- [DataBinding](https://github.com/gustavofariaa/AndroidKotlinAlura/tree/main/DataBinding)
   <p align="left">
     <img src=".github/DataBinding.gif" alt="layout" width="180px">
   </p>
