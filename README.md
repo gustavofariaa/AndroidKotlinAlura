@@ -3,22 +3,36 @@
 </h1>
  
 <p align="center">
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-curso">Curso</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projetos">Projetos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-cursos">Cursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#%EF%B8%8F-desenvolvimento">Desenvolvimento</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 <br>
- 
-## ✨ Projeto
- 
-O projeto consiste em uma aplicação para gerenciar finanças. O usuário consegue adicionar, editar e remover receitas ou despesas. Conforme os dados são adicionados é possível visualizá-los por meio de uma lista. Na parte superior temos um resumo contendo o resultado de todas as operações. Um breve exemplo, pode ser visto a seguir:
 
-<p align="center">
-  <img src=".github/screen.gif" alt="layout" width="180px">
-</p>
+## ✨ Projetos
  
-## 📚 Curso
+- [Finances](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/Finances)
+  <p align="left">
+    <img src=".github/Finances.gif" alt="layout" width="180px">
+  </p>
+- [TechNews](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/TechNews)
+  <p align="left">
+    <img src=".github/TechNews.gif" alt="layout" width="180px">
+  </p>
+    <p align="left">
+    <img src=".github/TechNews2.gif" alt="layout" width="360px">
+  </p>
+- [AluraEsporte](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/AluraEsporte)
+  <p align="left">
+    <img src=".github/AluraEsporte.gif" alt="layout" width="180px">
+  </p>
+- [DataBinding](https://github.com/gustavofariaa/AndroidKotlinUdemy/tree/main/DataBinding)
+  <p align="left">
+    <img src=".github/DataBinding.gif" alt="layout" width="180px">
+  </p>
+ 
+## 📚 Cursos
  
 - [Kotlin parte 1: Sua primeira app android na linguagem](https://cursos.alura.com.br/course/android-com-kotlin-parte-1)
   - Crie sua primeira app Android com suporte ao Kotlin
@@ -46,6 +60,45 @@ O projeto consiste em uma aplicação para gerenciar finanças. O usuário conse
   - Declare e implemente Higher-Order Functions
   - Aplique menu de contexto
   - Declare Companion Objects
+
+- [Architecture Components: ViewModel, LiveData e Room](https://cursos.alura.com.br/course/android-archtecture-components)
+  - Conhecendo o projeto Ver primeiro vídeo
+  - Começando a implementação do ViewModel
+  - Integrando o ViewModel com o LiveData
+  - Ajustando as demais funcionalidades com o novo modelo
+  - Utilizando a integração entre LiveData e Room
+
+- [Injeção de dependência em projetos Android com Koin - Parte 1](https://cursos.alura.com.br/injecao-de-dependencia-em-projetos-android-com-koin-parte-1-c48)
+
+- [Injeção de dependência em projetos Android com Koin - Parte 2](https://cursos.alura.com.br/injecao-de-dependencia-em-projetos-android-com-koin-parte-2-c49)
+
+- [Android Fragments: Reutilizando componentes visuais](https://cursos.alura.com.br/course/android-fragments)
+  - Migrando lista de notícias para fragment Ver primeiro vídeo
+  - Implementando Fragments programaticamente
+  - Evitando problemas comuns na reutilização de Fragments
+  - Reutilizando Fragments em layouts de multiplos painéis
+  - Melhorando a flexibilidade no uso de múltiplos painéis
+
+- [Navigation parte 1: Transição de telas no Android](https://cursos.alura.com.br/course/android-navigation)
+  - Migrando lista de notícias para fragment Ver primeiro vídeo
+  - Configurando destinos
+  - Ajustando a back stack
+  - Configurando ações
+  - Aplicando os toques finais
+
+- [Navigation parte 2: Novas features e reutilização de código](https://cursos.alura.com.br/course/android-navigation-features)
+  - Aplicando a navegação condicional Ver primeiro vídeo
+  - Reutilizando conexões com ações globais
+  - Utilizando técnicas de reaproveitamento de código
+  - Flexibilizando a adição de novos destinos
+  - Integrando componentes visuais com o Navigation UI
+
+- [Data Binding no Android: vinculando modelo com layout](https://cursos.alura.com.br/course/android-data-binding)
+  - Utilizando o binding de views Ver primeiro vídeo
+  - Implementando Binding Adapters
+  - Lidando com event listeners
+  - Entendendo one-way e two-way Data Binding
+  - Campos observáveis e LiveData
  
 ## 🛠️ Desenvolvimento
  
